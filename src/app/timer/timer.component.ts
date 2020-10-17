@@ -1,6 +1,6 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
-import {interval, Observable, Subscription, fromEvent, merge, empty} from 'rxjs';
-import {map, bufferCount, filter, switchMap, mapTo, takeWhile, scan, startWith} from 'rxjs/operators';
+import {Component, OnInit} from '@angular/core';
+import {interval, Observable, Subscription, fromEvent} from 'rxjs';
+import {map, bufferCount, filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-timer',
@@ -77,8 +77,7 @@ export class TimerComponent implements OnInit{
         }
         // return timestamps[0] > new Date().getTime() - this.clickTimespan;
       })
-    ).subscribe(x => console.log(this.flag));
-    // wait.subscribe(value => console.log(value));
+    ).subscribe();
   }
 
 }
